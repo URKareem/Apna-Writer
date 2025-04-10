@@ -12,3 +12,8 @@ function toggleIDCard() {
     const overlay = document.getElementById('idCardOverlayThree');
     overlay.classList.toggle('hidden');
   }
+
+  function toggleIDCardFour() {
+    const overlay = document.getElementById('idCardOverlayFour');
+    overlay.classList.toggle('hidden');
+  }
