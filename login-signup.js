@@ -37,8 +37,13 @@ document.getElementById("loginBtn").addEventListener("click", async (e) => {
 
   const { error } = await supabase.auth.signInWithPassword({ email, password })
 
-  loginMessage.textContent = error
-    ? `Login Error: ${error.message}`
-    : "Login successful!"
-})
+  const loginMessage = document.getElementById("loginMessage");
+  if (error) {
+    loginMessage.textContent = `Login Error: ${error.message}`;
+  } else {
+    loginMessage.textContent = "Login successful!";
+    // Redirect to homepage
+    window.location.href = "https://ur-writer.netlify.app/";
+  }
+});
 
