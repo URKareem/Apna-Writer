@@ -15,7 +15,13 @@ document.getElementById("signupBtn").addEventListener("click", async (e) => {
   const email = document.getElementById("signupEmail").value
   const password = document.getElementById("signupPassword").value
 
-  const { error } = await supabase.auth.signUp({ email, password })
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: 'https://ur-writer.netlify.app/login-signup'  // 👈 redirect after confirmation
+    }
+  });
 
   signupMessage.textContent = error
     ? `Signup Error: ${error.message}`
