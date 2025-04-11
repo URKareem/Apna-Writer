@@ -27,9 +27,3 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
         : "Login successful!"
     });
 
-
-//Form Changer
-function toggleForms() {
-  document.getElementById('login-section').classList.toggle('hidden');
-  document.getElementById('signup-section').classList.toggle('hidden');
-}
